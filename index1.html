@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Dashboard</title>
+    <!-- Google Fonts & Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js CDN for interactive visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-group">
+                <div class="logo-icon">📊</div>
+                <span class="logo-text">EduPredict</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index1.html" class="active">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        
+        <!-- Dashboard Sub-Header -->
+        <div class="dashboard-header">
+            <div class="dashboard-title-group">
+                <h2>Predictive Report</h2>
+                <p>Detailed performance analytics and study recommendation dashboard</p>
+            </div>
+            <div class="dashboard-actions">
+                <button class="btn-secondary" onclick="window.print()">
+                    🖨️ Print Report
+                </button>
+                <button class="btn-primary" onclick="location.href='index.html'">
+                    🔄 New Prediction
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid Layout -->
+        <div class="dashboard-grid">
+            
+            <!-- 1. Student Profile Widget -->
+            <div class="card profile-card">
+                <div class="card-title">👤 Student Profile</div>
+                <div class="profile-avatar" id="profileAvatar">S</div>
+                <div class="profile-name" id="studentNameDisplay">Student Name</div>
+                <div class="profile-tag" id="genderTag">Male</div>
+                
+                <div class="profile-meta-grid">
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-value" id="ageDisplay">17</span>
+                        <span class="profile-meta-label">Age</span>
+                    </div>
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-value" id="calculatedScoreDisplay">0.0%</span>
+                        <span class="profile-meta-label">Score</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Performance Gauge Widget -->
+            <div class="card prediction-card">
+                <div class="card-title">📈 Performance Index</div>
+                
+                <div class="gauge-wrapper">
+                    <svg class="gauge-svg" viewBox="0 0 150 150">
+                        <circle class="gauge-bg" cx="75" cy="75" r="70"></circle>
+                        <circle class="gauge-fill" id="scoreGauge" cx="75" cy="75" r="70"></circle>
+                    </svg>
+                    <div class="gauge-value">
+                        <span id="scoreText">0%</span>
+                        <span class="gauge-unit">Predicted Score</span>
+                    </div>
+                </div>
+                
+                <div class="prediction-badge" id="predictionStatus">Predicting...</div>
+            </div>
+
+            <!-- 3. KPI Metrics Widget -->
+            <div class="card metrics-card">
+                <div class="card-title">🔑 Key Input Indicators</div>
+                
+                <!-- Attendance Metric -->
+                <div class="metric-widget">
+                    <div class="metric-left">
+                        <span class="metric-label">Attendance</span>
+                        <span class="metric-value" id="attendanceValue">0%</span>
+                        <div class="metric-right-progress">
+                            <div class="metric-fill" id="attendanceBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-icon-box">📅</div>
+                </div>
+                
+                <!-- Study Hours Metric -->
+                <div class="metric-widget">
+                    <div class="metric-left">
+                        <span class="metric-label">Study Time (Weekly)</span>
+                        <span class="metric-value" id="studyHoursValue">0 hrs</span>
+                        <div class="metric-right-progress">
+                            <div class="metric-fill" id="studyHoursBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-icon-box">📚</div>
+                </div>
+                
+                <!-- Previous Marks Metric -->
+                <div class="metric-widget">
+                    <div class="metric-left">
+                        <span class="metric-label">Previous Academic Marks</span>
+                        <span class="metric-value" id="previousMarksValue">0%</span>
+                        <div class="metric-right-progress">
+                            <div class="metric-fill" id="previousMarksBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-icon-box">📝</div>
+                </div>
+            </div>
+
+            <!-- 4. Chart Visualization Widget -->
+            <div class="card chart-card">
+                <div class="card-title">📊 Metrics Comparison</div>
+                <div class="chart-wrapper">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 5. Academic Insights & Recommendations Widget -->
+            <div class="card insights-card">
+                <div class="card-title">💡 Academic Action Recommendations</div>
+                <ul class="insights-list" id="insightsList">
+                    <!-- Dynamic Recommendation items go here -->
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 EduPredict. Student Performance Analytics System.</p>
+    </footer>
+
+    <!-- Logic Script -->
+    <script src="javascript1.js"></script>    
+</body>
+</html>

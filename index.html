@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-group">
+                <div class="logo-icon">📊</div>
+                <span class="logo-text">EduPredict</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index1.html">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Predict Performance</h1>
+
+        <form id="studentForm">
+            <!-- Student Name -->
+            <label for="name">Student Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter student name"
+                required
+            >
+
+            <!-- Age -->
+            <label for="age">Age</label>
+            <input
+                type="number"
+                id="age"
+                placeholder="Enter age (e.g. 17)"
+                min="1"
+                max="100"
+                required
+            >
+
+            <!-- Gender -->
+            <label class="gender-title">Gender</label>
+            <div class="gender">
+                <label for="male" class="gender-option">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    Male
+                </label>
+
+                <label for="female" class="gender-option">
+                    <input type="radio" id="female" name="gender" value="female">
+                    Female
+                </label>
+
+                <label for="other" class="gender-option">
+                    <input type="radio" id="other" name="gender" value="other">
+                    Other
+                </label>
+            </div>
+
+            <!-- Attendance -->
+            <label for="attendance">Attendance (%)</label>
+            <input
+                type="number"
+                id="attendance"
+                placeholder="Enter attendance percentage (0-100)"
+                min="0"
+                max="100"
+                required
+            >
+
+            <!-- Study Hours -->
+            <label for="study_hours">Study Hours per Week</label>
+            <input
+                type="number"
+                id="study_hours"
+                placeholder="Enter study hours per week (e.g. 15)"
+                min="0"
+                required
+            >
+
+            <!-- Previous Marks -->
+            <label for="previous_marks">Previous Marks (%)</label>
+            <input
+                type="number"
+                id="previous_marks"
+                placeholder="Enter previous marks percentage (0-100)"
+                min="0"
+                max="100"
+                required
+            >
+
+            <!-- Buttons -->
+            <div class="btn-group">
+                <button type="submit" id="goToDashboard">
+                    Predict Details
+                </button>
+                <button type="reset">
+                    Reset
+                </button>
+            </div>
+
+            <!-- Result -->
+            <p id="result"></p>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 EduPredict. Student Performance Analytics System.</p>
+    </footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
